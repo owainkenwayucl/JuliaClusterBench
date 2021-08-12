@@ -1,4 +1,5 @@
 using Pkg
+Pkg.activate()
 Pkg.instantiate()
 
 using SystemBench, LinearAlgebra, LinearAlgebra.BLAS
