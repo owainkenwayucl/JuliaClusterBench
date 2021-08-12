@@ -16,7 +16,7 @@ JOBID = try
 		"LOGIN"
 end
 
-cluster = try
+clustername = try
 		cluster=readchomp(`/shared/ucl/apps/cluster-bin/whereami`)
 	catch
 		"Unknown"
@@ -24,11 +24,9 @@ end
 
 
 BLAS.set_num_threads(OMPThreads)
-actualtheads = BLAS.get_num_threads()
+actualthreads = BLAS.get_num_threads()
 
-fname = string(cluster, "-", JOBID, "-", OMPThreads, "-", actualtheads, ".txt")
-
-println("Running using ", actualthreads, " threads.")
+fname = string(clustername, "-", JOBID, "-", OMPThreads, "-", actualthreads, ".txt")
 
 res = runbenchmark();
 
