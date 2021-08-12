@@ -1,3 +1,6 @@
+using Pkg
+Pkg.instantiate()
+
 using SystemBench, LinearAlgebra, LinearAlgebra.BLAS
 
 OMPThreads = try
