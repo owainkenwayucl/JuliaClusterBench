@@ -2,7 +2,7 @@ using Pkg
 Pkg.activate("environment")
 Pkg.instantiate()
 
-using SystemBench, LinearAlgebra, LinearAlgebra.BLAS
+using SystemBenchmark, LinearAlgebra, LinearAlgebra.BLAS
 
 OMPThreads = try
 		parse(Int,ENV["OMP_NUM_THREADS"])
