@@ -32,7 +32,7 @@ println("Running on cluster: ", clustername)
 println("Running in job: ", JOBID)
 println("Detected OpenMP thread count: ", OMPThreads)
 println("Selected number of threads: ", actualthreads)
-rintln("Writing output to: ", fname)
+println("Writing output to: ", fname)
 
 res = runbenchmark();
 
