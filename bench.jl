@@ -28,6 +28,12 @@ actualthreads = BLAS.get_num_threads()
 
 fname = string(clustername, "-", JOBID, "-", OMPThreads, "-", actualthreads, ".txt")
 
+println("Running on cluster: ", clustername)
+println("Running in job: ", JOBID)
+println("Detected OpenMP thread count: ", OMPThreads)
+println("Selected number of threads: ", actualthreads)
+rintln("Writing output to: ", fname)
+
 res = runbenchmark();
 
 savebenchmark(fname, res)
