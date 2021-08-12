@@ -1,5 +1,5 @@
 using Pkg
-Pkg.activate()
+Pkg.activate("environment")
 Pkg.instantiate()
 
 using SystemBench, LinearAlgebra, LinearAlgebra.BLAS
