@@ -17,16 +17,21 @@ JOBID = try
 end
 
 clustername = try
-		cluster=readchomp(`/shared/ucl/apps/cluster-bin/whereami`)
+		readchomp(`/shared/ucl/apps/cluster-bin/whereami`)
 	catch
 		"Unknown"
 end
 
+hname = try
+                readchomp(`/usr/bin/hostname')
+	catch
+		"Unknown"
+end
 
 BLAS.set_num_threads(OMPThreads)
 actualthreads = BLAS.get_num_threads()
 
-fname = string(clustername, "-", JOBID, "-", OMPThreads, "-", actualthreads, ".txt")
+fname = string(clustername, "-", hname, "-", JOBID, "-", OMPThreads, "-", actualthreads, ".txt")
 
 println("Running on cluster: ", clustername)
 println("Running in job: ", JOBID)
