@@ -4,7 +4,7 @@
 #$ -pe smp 32
 
 #$ -cwd
-#$ -l h_rt=01:30:00
+#$ -l h_rt=02:30:00
 
 #$ -l tmpfs=2G
 
@@ -21,6 +21,7 @@ cp bench.jl $TMPDIR
 cd $TMPDIR
 for a in $(seq 1 $THR)
 do
+  date
   OMP_NUM_THREADS=$a julia bench.jl
 done
 
