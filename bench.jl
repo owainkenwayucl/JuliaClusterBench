@@ -23,7 +23,7 @@ clustername = try
 end
 
 hname = try
-                readchomp(`/usr/bin/hostname')
+                readchomp(`/usr/bin/hostname`)
 	catch
 		"Unknown"
 end
